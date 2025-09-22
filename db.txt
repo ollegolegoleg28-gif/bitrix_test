@@ -1,0 +1,22 @@
+CREATE TABLE contacts (
+    id BIGINT PRIMARY KEY,
+    name VARCHAR(255),
+    phone VARCHAR(50),
+    email VARCHAR(255)
+);
+
+CREATE TABLE leads (
+    id BIGINT PRIMARY KEY,
+    title VARCHAR(255),
+    status VARCHAR(50),
+    created_date TIMESTAMP,
+    contact_id BIGINT REFERENCES contacts(id)
+);
+
+CREATE TABLE deals (
+    id BIGINT PRIMARY KEY,
+    title VARCHAR(255),
+    stage VARCHAR(50),
+    opportunity NUMERIC(12,2),
+    contact_id BIGINT REFERENCES contacts(id)
+);
