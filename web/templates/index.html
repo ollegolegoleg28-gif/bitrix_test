@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitrix Demo</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #333; padding: 5px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Contacts</h1>
+    <table>
+        <tr><th>ID</th><th>Name</th></tr>
+        {% for c in contacts %}
+        <tr><td>{{ c[0] }}</td><td>{{ c[1] }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <h1>Leads</h1>
+    <table>
+        <tr><th>ID</th><th>Title</th><th>Status</th><th>Contact ID</th></tr>
+        {% for l in leads %}
+        <tr><td>{{ l[0] }}</td><td>{{ l[1] }}</td><td>{{ l[2] }}</td><td>{{ l[3] }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <h1>Deals</h1>
+    <table>
+        <tr><th>ID</th><th>Title</th><th>Stage</th><th>Opportunity</th><th>Contact ID</th></tr>
+        {% for d in deals %}
+        <tr><td>{{ d[0] }}</td><td>{{ d[1] }}</td><td>{{ d[2] }}</td><td>{{ d[3] }}</td><td>{{ d[4] }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
